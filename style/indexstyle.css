@@ -1,0 +1,233 @@
+/* =========================================
+   1. ABOUT SECTION & PROFILBILD
+   ========================================= */
+.about {
+    display: flex;
+    align-items: center; 
+    gap: 200px; 
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+/* Maske exklusiv für das Hauptprofilbild */
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+    -webkit-mask-image: url('../img/maskround.png');
+    mask-image: url('../img/maskround.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain; 
+    mask-size: contain;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* =========================================
+   2. TREE-WRAPPER & VERZWEIGUNGEN
+   ========================================= */
+.tree-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    z-index: 1; 
+}
+
+.center-line {
+    position: absolute;
+    top: 0;
+    bottom: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    pointer-events: none;
+    z-index: -1; 
+}
+.stem-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px; 
+    margin-top: 50px;
+}
+
+.split-box {
+    background-color: var(--color-bg); 
+    padding: 30px;
+    border: 2px solid var(--color-title);
+    border-radius: 12px;
+    position: relative;
+    text-decoration: none;
+    color: var(--color-text); 
+    display: block; 
+}
+
+.left-branch::before,
+.right-branch::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    height: 50px;
+    width: calc(50% + 50px); 
+    z-index: -2;
+    background-color: var(--color-accent-green);
+    
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+/* Linker Ast: Tieferer, organischer Schwung zur Box */
+.left-branch::before {
+    left: 50%;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'%3E%3Cpath d='M 100,0 Q 65,42 0,50' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'%3E%3Cpath d='M 100,0 Q 65,42 0,50' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Rechter Ast: Tieferer, organischer Schwung zur Box */
+.right-branch::before {
+    right: 50%;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'%3E%3Cpath d='M 0,0 Q 35,42 100,50' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' preserveAspectRatio='none'%3E%3Cpath d='M 0,0 Q 35,42 100,50' stroke='black' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.final-section {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.final-box {
+    background-color: var(--color-bg);
+    padding: 40px;
+    border: 2px solid var(--color-title);
+    border-radius: 12px;
+    width: 60%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    display: block;
+    position: relative;
+}
+
+/* =========================================
+   1. DER CONTAINER (Position, Schatten & Animation)
+   ========================================= */
+.left-branch .preview-wrapper,
+.right-branch .preview-wrapper,
+.final-box .preview-wrapper {
+    position: absolute;
+    opacity: 0;
+    z-index: 50; 
+    pointer-events: auto; 
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    
+    /* Der Schatten wird auf Basis der sichtbaren Maske im Inneren erzeugt */
+    filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 1));
+}
+
+/* =========================================
+   2. DAS BILD (Maske & Hintergrund)
+   ========================================= */
+.left-branch .preview-wrapper::after,
+.right-branch .preview-wrapper::after,
+.final-box .preview-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100% 100%; 
+    mask-size: 100% 100%;
+}
+
+/* Linker Ast (Games) */
+.left-branch .preview-wrapper {
+    top: 50%; right: 0; 
+    width: calc(50vw - 50px); 
+    height: auto; aspect-ratio: 1 / 1;
+    transform: translateY(-50%) scale(0.2);
+    transform-origin: right center; 
+}
+.left-branch .preview-wrapper::after {
+    background: url('../img/gamepreview.png') center/cover no-repeat;
+    -webkit-mask-image: url('../img/masksideleft.png');
+    mask-image: url('../img/masksideleft.png');
+}
+
+/* Rechter Ast (Writing) */
+.right-branch .preview-wrapper {
+    top: 50%; left: 0; 
+    width: calc(50vw - 59px); 
+    height: auto; aspect-ratio: 1 / 1;
+    transform: translateY(-50%) scale(0.2);
+    transform-origin: left center; 
+}
+.right-branch .preview-wrapper::after {
+    background: url('../img/preview.png') center/cover no-repeat;
+    -webkit-mask-image: url('../img/masksideright.png');
+    mask-image: url('../img/masksideright.png');
+    -webkit-mask-position: left center;
+    mask-position: left center;
+}
+
+/* Finaler Ast (Resume) */
+.final-box .preview-wrapper {
+    bottom: 0; left: 50%;
+    width: 80vw; height: 90vh; aspect-ratio: 1 / 1;
+    transform: translateX(-50%) scale(0.2);
+    transform-origin: bottom center; 
+}
+.final-box .preview-wrapper::after {
+    background: url('../img/preview.png') center/cover no-repeat;
+    -webkit-mask-image: url('../img/masksidebottom.png');
+    mask-image: url('../img/masksidebottom.png');
+}
+
+/* =========================================
+   3. DIE HOVER-EFFEKTE
+   ========================================= */
+.left-branch:hover .preview-wrapper,
+.right-branch:hover .preview-wrapper {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.final-box:hover .preview-wrapper {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* =========================================
+   4. RESPONSIVE DESIGN (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; 
+        text-align: center;
+        gap: 40px; 
+    }
+}

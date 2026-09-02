@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style/basestyle.css">
+    <link rel="stylesheet" href="style/indexstyle.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav class="main-nav">
+        <a href="./index.html" class="nav-logo"><img src="img/logo.png" alt="Logo"></a>
+        
+        <ul class="nav-list">
+            <li><a href="./index.html" class="nav-link">About</a></li>
+            <li><a href="./pages/games.html" class="nav-link">Games</a></li>
+            <li><a href="./pages/writing.html" class="nav-link">Writing</a></li>
+        </ul>
+        
+        <ul class="social-list">
+            <li><a href="mailto:juliacordes265@gmail.com" target="_blank"><img src="img/mail.png" alt="Email"></a></li>
+            <li><a href="https://www.linkedin.com/in/julia-cordes-853bbb320/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <h3 class="pre-title center">Game Designer | Writer | Programmer</h3>
+        <h1 class="title center">Vorname Nachname</h1>
+
+    <!-- Haupt-Wrapper, der die Linie zentriert -->
+        <div class="tree-wrapper">
+            
+            <!-- Die durchgehende Linie (mittlerer Ast) -->
+            <div class="center-line">
+                <svg class="stem-svg" preserveAspectRatio="none" viewBox="0 0 10 1000">
+                    <defs>
+                        <pattern id="stem-pattern" width="10" height="140" patternUnits="userSpaceOnUse">
+                            <!-- Längere, sanftere Bögen durch eine größere Musterhöhe (140px statt 60px) -->
+                            <path d="M5,0 Q10,35 5,70 Q0,105 5,140" stroke="var(--color-accent-green)" stroke-width="2" fill="none" stroke-linecap="round" />
+                        </pattern>
+                    </defs>
+                    <rect width="10" height="100%" fill="url(#stem-pattern)" />
+                </svg>
+            </div>
+            <section class="about">
+                <div class="about-img">
+                    <img src="img/profile.jpg" alt="Profile Picture" class="mask-layer">
+                </div>
+                <div class="about-text">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+            </section>
+        
+            <section class="split-section">
+                <a href="./pages/games.html" class="split-box left-branch">
+                    <div class="preview-wrapper"></div>
+                    <h2>Games</h2>
+                    <p>My Game Projects</p>
+                </a>
+
+                <a href="./pages/writing.html" class="split-box right-branch">
+                    <div class="preview-wrapper"></div>
+                    <h2>Writing</h2>
+                    <p>My Writing Portfolio</p>
+                </a>
+            </section>
+        
+            <section class="final-section">
+                <div class="final-box">
+                    <div class="preview-wrapper"></div>
+                    <h2>Resume</h2>
+                    <p>text hier POG!</p>
+                </div>
+            </section>
+        
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">&copy; 2026 Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

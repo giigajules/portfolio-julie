@@ -1,0 +1,168 @@
+/* =========================================
+   PROJECT HERO SECTION (Header)
+   ========================================= */
+.project-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Nimmt 60% der Bildschirmhöhe ein */
+    display: flex;
+    justify-content: center; /* Zentriert das Logo horizontal */
+    align-items: center; /* Zentriert das Logo vertikal */
+    margin-bottom: 40px; /* Abstand zum Inhalt darunter */
+}
+
+/* Das Hintergrundbild mit der Wolken-Maske */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Hier dein Hintergrundbild für das Projekt einfügen */
+    background: url('../img/InertiaHero.jpg') center/cover no-repeat;
+    z-index: 1; /* Legt den Hintergrund GANZ nach hinten */
+    
+    /* Die Wolken-Maske für den unteren Rand */
+    -webkit-mask-image: url('../img/masksidebottom.png');
+    mask-image: url('../img/masksidebottom.png');
+    
+    /* 100% 100% zwingt die Maske, sich exakt an die Breite und Höhe anzupassen */
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+/* Das Spiel-Logo in der Mitte */
+.hero-logo {
+    position: relative;
+    z-index: 2; /* Wichtig: Liegt ÜBER dem Hintergrundbild */
+    max-width: 500px; /* Begrenzt die Größe des Logos */
+    width: 80%; /* Sorgt dafür, dass es auf dem Handy kleiner wird */
+    height: auto;
+}
+
+.nav-link:hover {
+    background-color: var(--color-title);
+}
+
+/* =========================================
+   PROJECT DETAILS (3-Spalten-Layout)
+   ========================================= */
+.project-details {
+    display: grid;
+    /* Teilt die Spalten auf: 1 Teil links, 2 Teile mitte, 1 Teil rechts */
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 40px; /* Abstand zwischen den drei Spalten */
+    max-width: 1200px;
+    margin: 0 auto 60px auto; /* Zentriert die Sektion auf der Seite */
+    padding: 0 20px;
+    align-items: start; /* Verhindert, dass die Spalten unnötig in die Länge gezogen werden */
+}
+
+/* Optional: Optische Anpassung für die einzelnen Boxen, passend zu deiner Skizze */
+.info-box {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-title);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px; /* Abstand zwischen den zwei Elementen innerhalb einer Spalte */
+}
+
+/* Rahmen um das Video entfernen und Ecken abrunden */
+.video-container iframe {
+    border-radius: 12px;
+    border: 2px solid var(--color-title);
+    display: block; /* Entfernt kleine unsichtbare Abstände unterm Video */
+}
+.info-box ul {
+    list-style-type: circle;
+    color: var(--color-text);
+}
+.steam-link a {
+    color: var(--color-title);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.screenshot-gallery {
+    max-width: 95vw;
+    margin: 1rem auto;
+    padding-bottom: 1rem;
+}
+
+.screenshot-grid {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(5, 1fr); 
+}
+
+.screenshot-grid img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+.screenshot-grid img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.screenshot-grid .span-2 { grid-column: span 2; aspect-ratio: 16 / 9;}
+.screenshot-grid .span-3 { grid-column: span 3; aspect-ratio: 21 / 9;}
+.screenshot-grid .span-4 { grid-column: span 4; aspect-ratio: 21 / 9;}
+.screenshot-grid .span-5 { grid-column: span 5; aspect-ratio: 32 / 9;}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.7);
+    animation: zoomInLight 0.3s ease-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--theme-secondary, #90caf9);
+}
+
+/* Responsive: Auf dem Handy (unter 900px) alles untereinander anzeigen */
+@media (max-width: 900px) {
+    .project-details {
+        grid-template-columns: 1fr; /* Macht aus den 3 Spalten eine einzige */
+    }
+}

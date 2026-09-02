@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Tapestry&display=swap');
+
+:root {
+    /* Farben */
+    --color-bg: #F7F4D5;
+    --color-text: #0a3323;
+    --color-title: #d3968c;
+    --color-accent-green: #839958;
+    --color-accent-blue: #105666;
+
+    /* 
+       Schriften: [style] [weight] [size]/[line-height] [family] 
+       'normal 400' ist der Standard und sorgt für saubere Lesbarkeit.
+    */
+    --font-title: normal 400 32px/1.2 "Tapestry", serif;
+    --font-title-2: normal 400 24px/1.2 "Tapestry", serif;
+    --font-title-3: normal 400 20px/1.2 "Tapestry", serif;
+    --font-text: normal 400 16px/1.6 "Alegreya", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--color-bg);
+    font: var(--font-text);
+}
+h1{
+    color: var(--color-title);
+    font: var(--font-title);
+    margin-bottom: 20px;
+}
+h2{
+    color: var(--color-accent-green);
+    font: var(--font-title-2);
+}
+h3{
+    color: var(--color-accent-blue);
+    font: var(--font-title-3);
+}
+p{
+    color: var(--color-text);
+    font: var(--font-text);
+}
+.center{
+    text-align: center;
+}
+
+.title {
+    color: var(--color-title);
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.pre-title {
+    color: var(--color-accent-blue);
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}

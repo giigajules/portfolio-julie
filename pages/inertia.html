@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../img/logo.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="../style/basestyle.css">
+        <link rel="stylesheet" href="../style/navbar.css">
+        <link rel="stylesheet" href="../style/gameprojectstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <style>
+        :root {
+            --color-bg: #341562;
+            --color-accent-green: #8a20b8;
+            --color-title: #05e3eb;
+            --color-text: #ffffff;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">About</a></li>
+                    <li><a href="./games.html" class="nav-link">Games</a></li>
+                    <li><a href="./writing.html" class="nav-link">Writing</a></li>
+                </ul>
+
+                <ul class="social-list">
+                    <li><a href="mailto:juliacordes265@gmail.com" target="_blank"><img src="../img/mail.png" alt="Email"></a></li>
+                    <li><a href="https://www.linkedin.com/in/julia-cordes-853bbb320/" target="_blank"><img src="../img/linkedin.png" alt="LinkedIn"></a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="project-hero">
+                <div class="hero-bg"></div>
+                <img src="../img/InertiaLogo.png" alt="Inertia Logo" class="hero-logo">
+            </section>
+            <section class="project-details">
+                <!-- LINKE SPALTE -->
+                <div class="col-left">
+                    <div class="info-box">
+                        <p>Finished: <i>31.08.2027</i></p>
+                    </div>
+                    <div class="info-box">
+                        <p>My Roles:</p>
+                        <ul>
+                            <li>Logo</li>
+                            <li>UI</li>
+                            <li>UX</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- MITTLERE SPALTE -->
+                <div class="col-center">
+                    <div class="info-box">
+                        <p class="center"><i>Concept, short description</i></p>
+                    </div>
+                    <div class="info-box">
+                        <h1 class="center">Description</h1>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            
+                <!-- RECHTE SPALTE -->
+                <div class="col-right">
+                    <div class="info-box steam-link center">
+                        <a href="https://store.steampowered.com/app/4934490/Inertia/" target="_blank">Play Inertia on Steam</a>
+                    </div>
+                    <div class="video-container">
+                        <!-- Das iframe auf 100% Breite setzen, damit es ins Grid passt -->
+                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            
+            </section>
+            <section class="screenshot-gallery">
+                <h1 class="center">Screenshot Gallery</h1>
+                <div class="screenshot-grid">
+                    <img src="../img/inertiaicon.png" alt="Gallery 2" class="span-1">
+                    <img src="../img/InertiaHero.jpg" alt="Gallery 1" class="span-3">
+                    <img src="../img/inertiaicon.png" alt="Gallery 4" class="span-1">
+                    <img src="../img/InertiaLogo.png" alt="Gallery 3" class="span-5">
+
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="footer-text">&copy; 2026 Gigajules. All rights reserved.</p>
+        </footer>
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+        <script src="../script/script.js"></script>
+    </body>
+</html>
