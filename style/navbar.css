@@ -54,13 +54,15 @@
     height: 30px; 
     display: block;
 }
-footer{
+
+footer {
     text-align: center;
     align-items: center;
     background-color: var(--color-accent-green);
     padding: 10px;
 }
-footer p{
+
+footer p {
     color: var(--color-bg);
     font: var(--font-text);
 }

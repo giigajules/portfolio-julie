@@ -72,3 +72,9 @@ a {
     color: var(--color-text);
     font-weight: bold;
 }
+
+a.footer-text{
+    color: var(--color-bg);
+    font: var(--font-text);
+    text-decoration: solid underline;
+}
