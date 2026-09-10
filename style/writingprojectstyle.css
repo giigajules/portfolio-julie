@@ -17,12 +17,32 @@
 }
 
 .preview-image {
-    aspect-ratio: 9 / 12.72;
     object-fit: cover;
     height: 82vh;
     width: auto;
     border-radius: 12px;
 }
+.preview-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Macht die gesamte Box klickbar und entfernt die Standard-Link-Unterstreichung */
+.download-box {
+    display: block; 
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Optional: Ein schöner Hover-Effekt, damit man sofort merkt, dass die Box ein Button ist */
+.download-box:hover {
+    background-color: var(--color-accent-green);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
 /* Responsive: Auf dem Handy (unter 900px) alles untereinander anzeigen */
 @media (max-width: 900px) {
     .project-details {
