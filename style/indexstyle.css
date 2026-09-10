@@ -20,8 +20,8 @@
     height: auto;
     display: block;
     
-    -webkit-mask-image: url('../img/maskround.png');
-    mask-image: url('../img/maskround.png');
+    -webkit-mask-image: url('../img/cloudmask.svg');
+    mask-image: url('../img/cloudmask.svg');
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
