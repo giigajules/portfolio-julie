@@ -15,6 +15,7 @@
     --font-title: normal 400 32px/1.2 "Tapestry", serif;
     --font-title-2: normal 400 24px/1.2 "Tapestry", serif;
     --font-title-3: normal 400 20px/1.2 "Tapestry", serif;
+    --font-title-4: normal 400 16px/1.2 "Tapestry", serif;
     --font-text: normal 400 16px/1.6 "Alegreya", serif;
 }
 
@@ -26,6 +27,7 @@
 body{
     background-color: var(--color-bg);
     font: var(--font-text);
+    overflow-x: hidden;
 }
 h1{
     color: var(--color-title);
@@ -39,6 +41,10 @@ h2{
 h3{
     color: var(--color-accent-blue);
     font: var(--font-title-3);
+}
+h4{
+    color: var(--color-title);
+    font: var(--font-title-4);
 }
 p{
     color: var(--color-text);
