@@ -26,6 +26,7 @@
 body{
     background-color: var(--color-bg);
     font: var(--font-text);
+    overflow-x: hidden;
 }
 h1{
     color: var(--color-title);
