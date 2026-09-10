@@ -172,3 +172,12 @@
         grid-template-columns: 1fr; /* Macht aus den 3 Spalten eine einzige */
     }
 }
+
+
+
+.nav-link {
+    color: var(--color-title);
+}
+.nav-link:hover {
+    background-color: var(--color-bg);
+}

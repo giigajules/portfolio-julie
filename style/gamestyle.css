@@ -140,3 +140,8 @@ main {
     -webkit-mask-repeat: no-repeat, repeat-x, repeat-x;
     mask-repeat: no-repeat, repeat-x, repeat-x;
 }
+
+.game-category:has(.game-square:hover){
+    z-index: 50;
+    position: relative;
+}
