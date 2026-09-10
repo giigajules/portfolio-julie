@@ -1,0 +1,31 @@
+.project-details {
+    display: grid;
+    /* Teilt die Spalten auf: 1 Teil links, 1 Teil rechts */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; /* Abstand zwischen den drei Spalten */
+    max-width: 1200px;
+    margin: 30px auto 30px auto; /* Zentriert die Sektion auf der Seite */
+    padding: 0 20px;
+    align-items: start; /* Verhindert, dass die Spalten unnötig in die Länge gezogen werden */
+}
+.info-box {
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-title);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px; /* Abstand zwischen den zwei Elementen innerhalb einer Spalte */
+}
+
+.preview-image {
+    aspect-ratio: 9 / 12.72;
+    object-fit: cover;
+    height: 82vh;
+    width: auto;
+    border-radius: 12px;
+}
+/* Responsive: Auf dem Handy (unter 900px) alles untereinander anzeigen */
+@media (max-width: 900px) {
+    .project-details {
+        grid-template-columns: 1fr; /* Macht aus den 3 Spalten eine einzige */
+    }
+}

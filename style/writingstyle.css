@@ -1,0 +1,147 @@
+:root{
+    --mask-bg: url('../img/dawnwalker.jpg');
+}
+
+/* =========================================
+   LAYOUT: KATEGORIEN & RASTER
+   ========================================= */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-category {
+    margin-bottom: 70px;
+}
+
+.game-category h2 {
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Bricht in die nächste Zeile um, wenn der Platz nicht reicht */
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   DIE QUADRATISCHEN BUTTONS
+   ========================================= */
+.game-square {
+    position: relative;
+    padding: 5px;
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--color-title);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--color-bg);
+}
+
+/* Sorgt dafür, dass der gehoverte Button immer über den anderen liegt */
+.game-square:hover {
+    z-index: 10;
+}
+
+.square-content {
+    text-align: center;
+    z-index: 2; /* Text bleibt unter der Vorschau verborgen, wenn sie aufploppt */
+}
+
+/* =========================================
+   ZENTRIERTE HOVER-MASKE
+   ========================================= */
+.preview-wrapper {
+    position: absolute;
+    /* Zentriert den Wrapper exakt in der Mitte des Quadrats */
+    top: 50%;
+    left: 50%;
+    
+    /* Die Vorschau wird etwas größer als das 250px-Quadrat */
+    width: 600px;
+    height: 600px;
+    
+    opacity: 0;
+    pointer-events: none; /* Klicks gehen durch die unsichtbare Maske auf den Button */
+    
+    /* WICHTIG: translate(-50%, -50%) ist nötig, damit das Skalieren aus der echten Mitte heraus passiert */
+    transform: translate(-50%, -50%) scale(0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.5));
+    z-index: 5;
+}
+
+.preview-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    /* Hier kannst du pro Wrapper andere Bilder laden */
+    background: var(--mask-bg) center/cover no-repeat;
+    
+    -webkit-mask-image: url('../img/cloudmask.svg');
+    mask-image: url('../img/cloudmask.svg');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+
+/* Der Pop-Out-Effekt */
+.game-square:hover .preview-wrapper {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* =========================================
+   DIE HORIZONTALE LINIE
+   ========================================= */
+/* Die dreifache Linie (1x gerade, 2x gegenläufig geschwungen) */
+.grid-container::before {
+    content: '';
+    position: absolute;
+    width: 100vw; 
+    height: 50px; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-accent-green); 
+    z-index: -1; 
+    
+    -webkit-mask-image: 
+        linear-gradient(black, black),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='160'%3E%3Cpath d='M0,80 Q62.5,20 125,80 T250,80' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='160'%3E%3Cpath d='M0,80 Q112.5,180 225,80 T450,80' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E");
+        
+    mask-image: 
+        linear-gradient(black, black),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='160'%3E%3Cpath d='M0,80 Q62.5,20 125,80 T250,80' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='160'%3E%3Cpath d='M0,80 Q112.5,180 225,80 T450,80' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E");
+
+    -webkit-mask-size: 100% 2px, 250px 100%, 450px 100%;
+    mask-size: 100% 2px, 250px 100%, 450px 100%;
+    
+    -webkit-mask-position: center, center, center;
+    mask-position: center, center, center;
+    
+    -webkit-mask-repeat: no-repeat, repeat-x, repeat-x;
+    mask-repeat: no-repeat, repeat-x, repeat-x;
+}
+
+.game-category:has(.game-square:hover){
+    z-index: 50;
+    position: relative;
+}

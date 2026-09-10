@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <link rel="icon" href="../img/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julie Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="../style/basestyle.css">
-    <link rel="stylesheet" href="../style/substyle.css">
+    <link rel="stylesheet" href="../style/writingstyle.css">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,12 +31,45 @@
     </nav>
 </header>
 
-    <main>
-        <h1>Writing</h1>
-        <section class="writing-container">
-            <p>writing goes here</p>
-        </section>
-    </main>
+<main>
+    <h1 class="title center">Writing</h1>
+
+    <!-- Erste Kategorie -->
+    <section class="game-category">
+        <h2 class="center">Chapter Excerpts</h2>
+        <div class="grid-container">
+            
+            <a href="./mikrokosmos.html" class="game-square" style="--mask-bg:url('../img/dawnwalker.jpg')">
+                <div class="square-content">
+                    <h3 class="pre-title">Mikrokosmos</h3>
+                    <p>A narrative puzzle-game where you control two characters simultaneously to solve riddles.</p>
+                </div>
+                <div class="preview-wrapper mikrokosmos-preview"></div>
+            </a>
+            <a href="./dreamteam.html" class="game-square">
+                <div class="square-content">
+                    <h3 class="pre-title">Dream Team</h3>
+                    <p>A two-player board game where you explore a dream and avoid nightmares.</p>
+                </div>
+                <div class="preview-wrapper lockefern-preview"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Zweite Kategorie -->
+    <section class="game-category">
+        <h2 class="center">Short Stories</h2>
+        <div class="grid-container">
+            <a href="./caretaker.html" class="game-square">
+                <div class="square-content">
+                    <h3 class="pre-title">Caretaker</h3>
+                    <p>A short horror-game where you finish tasks over multiple days while uncovering a terrifying truth.</p>
+                </div>
+                <div class="preview-wrapper"></div>
+            </a>
+        </div>
+    </section>
+</main>
 
     <footer>
         <p class="footer-text">&copy; 2026 Gigajules. All rights reserved.</p>
