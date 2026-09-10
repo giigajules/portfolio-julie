@@ -84,6 +84,7 @@
     display: block; /* Entfernt kleine unsichtbare Abstände unterm Video */
 }
 .info-box ul {
+    margin-left: 20px;
     list-style-type: circle;
     color: var(--color-text);
 }
