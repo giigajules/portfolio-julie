@@ -1,3 +1,7 @@
+:root {
+    --hero-bg: url('../img/InertiaHero.jpg');
+}
+
 /* =========================================
    PROJECT HERO SECTION (Header)
    ========================================= */
@@ -20,7 +24,7 @@
     height: 100%;
     
     /* Hier dein Hintergrundbild für das Projekt einfügen */
-    background: url('../img/InertiaHero.jpg') center/cover no-repeat;
+    background: var(--hero-bg) center/cover no-repeat;
     z-index: 1; /* Legt den Hintergrund GANZ nach hinten */
     
     /* Die Wolken-Maske für den unteren Rand */
@@ -33,6 +37,7 @@
     
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    pointer-events: none;
 }
 
 /* Das Spiel-Logo in der Mitte */
@@ -42,6 +47,7 @@
     max-width: 500px; /* Begrenzt die Größe des Logos */
     width: 80%; /* Sorgt dafür, dass es auf dem Handy kleiner wird */
     height: auto;
+    pointer-events: none;
 }
 
 .nav-link:hover {
