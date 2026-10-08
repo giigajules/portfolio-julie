@@ -5,8 +5,8 @@
     display: flex;
     align-items: center; 
     gap: 200px; 
-    max-width: 1200px; 
-    margin: 40px auto;
+    max-width: 1400px;
+    margin-top: -10vh;
     padding: 0 20px;
 }
 
@@ -19,7 +19,6 @@
     width: 100%;
     height: auto;
     display: block;
-    
     -webkit-mask-image: url('../img/cloudmask.svg');
     mask-image: url('../img/cloudmask.svg');
     -webkit-mask-repeat: no-repeat;
@@ -42,7 +41,7 @@
    ========================================= */
 .tree-wrapper {
     position: relative;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 100px 20px;
     z-index: 1; 
