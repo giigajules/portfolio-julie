@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Tapestry&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Fleur+De+Leah&display=swap');
 :root {
     /* Farben */
     --color-bg: #F7F4D5;
     --color-text: #0a3323;
-    --color-title: #d3968c;
-    --color-accent-green: #839958;
+    --color-title: #E67785;
+    --color-accent-green: #6FBB6E;
     --color-accent-blue: #105666;
 
     /* 
        Schriften: [style] [weight] [size]/[line-height] [family] 
        'normal 400' ist der Standard und sorgt für saubere Lesbarkeit.
     */
-    --font-title: normal 400 32px/1.2 "Tapestry", serif;
+    --font-title: normal 400 32px/1.2 "Fleur De Leah", serif;
     --font-title-2: normal 400 24px/1.2 "Tapestry", serif;
     --font-title-3: normal 400 20px/1.2 "Tapestry", serif;
     --font-title-4: normal 400 16px/1.2 "Tapestry", serif;
