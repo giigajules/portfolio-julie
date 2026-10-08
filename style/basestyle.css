@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400&family=Tapestry&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Fleur+De+Leah&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 :root {
     /* Farben */
     --color-bg: #F7F4D5;
@@ -12,11 +12,11 @@
        Schriften: [style] [weight] [size]/[line-height] [family] 
        'normal 400' ist der Standard und sorgt für saubere Lesbarkeit.
     */
-    --font-title: normal 400 32px/1.2 "Fleur De Leah", serif;
-    --font-title-2: normal 400 24px/1.2 "Tapestry", serif;
-    --font-title-3: normal 400 20px/1.2 "Tapestry", serif;
-    --font-title-4: normal 400 16px/1.2 "Tapestry", serif;
-    --font-text: normal 400 16px/1.6 "Alegreya", serif;
+    --font-title: normal 400 32px/1.2 "Merriweather", serif;
+    --font-title-2: normal 400 24px/1.2 "Merriweater", serif;
+    --font-title-3: normal 400 20px/1.2 "Merriweather", serif;
+    --font-title-4: normal 400 16px/1.2 "Merriweather", serif;
+    --font-text: normal 400 16px/1.6 "Merriweather", serif;
 }
 
 * {
@@ -77,4 +77,7 @@ a.footer-text{
     color: var(--color-bg);
     font: var(--font-text);
     text-decoration: solid underline;
+}
+.stronk{
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
